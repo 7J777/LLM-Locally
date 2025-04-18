@@ -1,0 +1,17 @@
+{
+  "name": "test",
+  "version": "0.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package_macOS": "electron-packager . Electron --platform=darwin --arch=x64 --out=dist --overwrite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "electron": "^35.1.5",
+    "electron-packager": "^17.1.2"
+  }
+}

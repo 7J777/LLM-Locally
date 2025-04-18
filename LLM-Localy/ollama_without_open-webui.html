@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-pan.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open-webui Interface Unavailable</title>
+    <style>
+    body {
+        font-family: "Times New Roman";
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        color: #333;
+        line-height: 1.6;
+        font-size: medium;
+        }
+
+    header {
+        background-color: rgb(59 152 57);
+        color: white;
+        padding: 1rem 0;
+        text-align: center;
+        }
+    .home-btn {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: rgb(59 152 57);
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        }
+    header button img {
+        width: 30px;
+        height: 30px;
+        }
+    header button img:hover {
+        width: 35px;
+        height: 35px;
+        }
+
+    main {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 1rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+    h1 {
+        color: #ffffff;
+        }
+
+    h2 {
+        color: rgb(59 152 57);
+        }
+
+    p {
+        margin: 1rem 0;
+    }
+
+    ol {
+        margin: 1rem 0;
+        padding-left: 1.5rem;
+        }
+
+    ol li {
+        margin: 0.5rem 0;
+    }
+
+    code {
+        background-color: #eee;
+        border-radius: 3px;
+        font-size: 95%;
+        font-family: courier, monospace;
+        padding: 0 3px;
+    }
+
+    pre {
+        position: relative;
+        background: #2d2d2d;
+        padding: 1em;
+        border-radius: 12px;
+        overflow-x: auto;
+    }
+
+    .copy-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgb(59 152 57);
+        color: rgb(255, 255, 255);
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.8rem;
+    }
+
+    .copy-btn:hover {
+        background: rgb(59 152 57);
+    }
+
+    a {
+        color: rgb(59 152 57);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+        color: #666;
+    }
+    </style>
+</head>
+<body>
+    <header>
+      <h1>Open-webui Interface Unavailable</h1>
+      <button
+        onclick="location.href='index.html'"
+        class="home-btn"
+        title="Home"
+      >
+        <img src="home.png" alt="Home Icon" />
+      </button>
+    </header>
+    <main>
+      <h2>Why is the Open-webui Interface Unavailable?</h2>
+      <p>The Open-webui interface may be unavailable for several reasons:</p>
+      <ol>
+        <li>The Open-webui service is not active.</li>
+        <li>The Open-webui service is starting up.</li>
+        <li>The Open-webui service is being updated.</li>
+      </ol>
+      <h2>How to Resolve the Issue?</h2>
+      <p>Let's see how to resolve each of these issues:</p>
+      <p>
+        1. If the Open-webui service is not active, you can start it using the
+        following command:
+      </p>
+      <pre><button class="copy-btn" onclick="copyToClipboard(this)"><i class="fas fa-clipboard"></i></button><code class="language-bash">docker restart open-webui</code></pre>
+      <p>
+        After running this command, wait a few moments and refresh
+        <a href="index.html">The page of the Open-webui interface.</a>
+      </p>
+      <p>
+        2. If the Open-webui service is starting up, please wait a few moments.
+      </p>
+      <p>
+        3. If the Open-webui service is being updated, please wait until the
+        update is complete. You will be informed through official announcements
+        on
+        <a href="http://localhost:4000/release.html">All Update</a>.
+      </p>
+
+      <h2>How to use ollama without open-webui?</h2>
+      <p>
+        You can use ollama without open-webui by using the following command:
+      </p>
+      <pre><button class="copy-btn" onclick="copyToClipboard(this)"><i class="fas fa-clipboard"></i></button><code class="language-bash">docker exec -it ollama ollama run [name_of_model]</code></pre>
+      <p>
+        Replace <code>[name_of_model]</code> with the name of the model you want
+        to use for exemple you can use <code>tinyllama</code>.
+      </p>
+    </main>
+
+    <footer>&copy; 2025 All rights reserved.</footer>
+    <script>
+      function copyToClipboard(button) {
+        const codeBlock = button.nextElementSibling;
+        const text = codeBlock.innerText;
+        const icon = button.querySelector("i");
+
+        navigator.clipboard
+          .writeText(text)
+          .then(() => {
+            icon.classList.remove("fa-clipboard");
+            icon.classList.add("fa-check");
+
+            setTimeout(() => {
+              icon.classList.remove("fa-check");
+              icon.classList.add("fa-clipboard");
+            }, 2000);
+          })
+          .catch((err) => {
+            console.error("Failed to copy text: ", err);
+          });
+      }
+    </script>
+</body>
+</html>
